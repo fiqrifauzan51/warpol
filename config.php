@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -6,18 +7,33 @@ if (session_status() === PHP_SESSION_NONE) {
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
+=======
+// config.php — Koneksi database
+
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');  
+define('DB_PASS', '');       
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
 define('DB_NAME', 'warpol_db');
 
 $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
 if (!$conn) {
+<<<<<<< HEAD
     die('<h3 style="color:red;font-family:sans-serif;padding:2rem;">
         Koneksi database gagal: ' . mysqli_connect_error() . '
     </h3>');
+=======
+    die(json_encode([
+        'status' => 'error',
+        'message' => 'Koneksi database gagal: ' . mysqli_connect_error()
+    ]));
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
 }
 
 mysqli_set_charset($conn, 'utf8mb4');
 
+<<<<<<< HEAD
 // ── Buat tabel login_attempts jika belum ada ──────────────────────────────────
 mysqli_query($conn, "CREATE TABLE IF NOT EXISTS login_attempts (
     id         INT AUTO_INCREMENT PRIMARY KEY,
@@ -122,3 +138,18 @@ function requireAdmin() {
         exit;
     }
 }
+=======
+// Mulai session di semua halaman
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Helper: cek apakah sudah login
+function requireLogin() {
+    if (!isset($_SESSION['user_id'])) {
+        header('Location: logWar.php');
+        exit;
+    }
+}
+?>
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3

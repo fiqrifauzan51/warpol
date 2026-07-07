@@ -20,6 +20,7 @@ $aktivitas = mysqli_query($conn, "
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Dashboard - KALA Coffee</title>
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -27,19 +28,53 @@ $aktivitas = mysqli_query($conn, "
         .img-nav  { width:26px;height:26px;object-fit:cover;border-radius:6px;flex-shrink:0; }
         .img-header { width:24px;height:24px;object-fit:cover;border-radius:5px; }
         .img-stat { width:32px;height:32px;object-fit:cover;border-radius:8px; }
+=======
+    <title>Dashboard - Coffe Warpol</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .img-logo-sidebar {
+            width: 42px; height: 42px;
+            object-fit: cover; border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.5);
+            flex-shrink: 0;
+        }
+        .img-nav {
+            width: 26px; height: 26px;
+            object-fit: cover; border-radius: 6px;
+            flex-shrink: 0;
+        }
+        .img-header {
+            width: 24px; height: 24px;
+            object-fit: cover; border-radius: 5px;
+        }
+        .img-stat {
+            width: 32px; height: 32px;
+            object-fit: cover; border-radius: 8px;
+        }
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
     </style>
 </head>
 <body>
 <div class="container">
+<<<<<<< HEAD
     <aside class="sidebar">
         <div class="sidebar-header">
             <div class="sidebar-logo">
                 <img src="poto/logo.png" alt="Logo" class="img-logo-sidebar">
                 <div class="logo-text"><h2>KALA Coffee</h2><p>Coffee Shop</p></div>
+=======
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <img src="logo.png" alt="Logo" class="img-logo-sidebar">
+                <div class="logo-text"><h2>Warpol</h2><p>Coffee Shop</p></div>
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
             </div>
         </div>
         <nav class="sidebar-nav">
             <a href="dashWar.php" class="nav-item active">
+<<<<<<< HEAD
                 <span>Dashboard</span>
             </a>
 
@@ -101,6 +136,37 @@ $aktivitas = mysqli_query($conn, "
                 </button>
                 <a href="logout.php" class="logout-btn">
                     <img src="poto/keluar.jpg" alt="Keluar" class="img-header">
+=======
+            
+                <span>Dashboard</span>
+            </a>
+            <a href="inputWar.php" class="nav-item">
+                <img src="input.png" alt="" class="img-nav">
+                <span>Input Stok Opname</span>
+            </a>
+            <a href="riwayatWar.php" class="nav-item">
+                <img src="riwayat.png" alt="" class="img-nav">
+                <span>Riwayat Stok</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-content">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>Selamat datang, <?= htmlspecialchars($_SESSION['user_nama']) ?></h1>
+                <p>Petugas - Warpol</p>
+            </div>
+            <div class="header-right">
+                <button class="notification-btn" title="Notifikasi">
+                    <img src="notif.png" alt="Notifikasi" class="img-header">
+                    <span class="notification-badge"></span>
+                </button>
+                <a href="logout.php" class="logout-btn">
+                    <img src="keluar.jpg" alt="Keluar" class="img-header">
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
                     <span>Keluar</span>
                 </a>
             </div>
@@ -109,26 +175,48 @@ $aktivitas = mysqli_query($conn, "
         <main class="dashboard-content">
             <div class="page-header">
                 <h1>Dashboard Petugas</h1>
+<<<<<<< HEAD
                 <p>Kelola dan pantau stok opname barang coffee shop KALA Coffee</p>
+=======
+                <p>Kelola dan pantau stok opname barang coffee shop Warpol</p>
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
             </div>
 
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-card-content">
                         <div class="stat-info"><p>Input Opname</p><h3><?= $total_opname ?></h3><small>Total keseluruhan</small></div>
+<<<<<<< HEAD
                         <div class="stat-icon blue"><img src="poto/input.png" alt="" class="img-stat"></div>
+=======
+                        <div class="stat-icon blue">
+                            <img src="input.png" alt="" class="img-stat">
+                        </div>
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
                     </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-card-content">
                         <div class="stat-info"><p>Target Tercapai</p><h3><?= $persen_target ?>%</h3><small>Stok sesuai / lebih</small></div>
+<<<<<<< HEAD
                         <div class="stat-icon green"><img src="poto/target.png" alt="" class="img-stat"></div>
+=======
+                        <div class="stat-icon green">
+                            <img src="target.png" alt="" class="img-stat">
+                        </div>
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
                     </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-card-content">
                         <div class="stat-info"><p>Stok Hampir Habis</p><h3><?= $hampir_habis ?></h3><small>Perlu restock</small></div>
+<<<<<<< HEAD
                         <div class="stat-icon red"><img src="poto/stok.png" alt="" class="img-stat"></div>
+=======
+                        <div class="stat-icon red">
+                            <img src="stok.png" alt="" class="img-stat">
+                        </div>
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
                     </div>
                 </div>
             </div>
@@ -167,6 +255,7 @@ $aktivitas = mysqli_query($conn, "
         </main>
     </div>
 </div>
+<<<<<<< HEAD
 
 <script>
 document.getElementById('hamburger-btn').addEventListener('click', function() {
@@ -198,5 +287,7 @@ document.querySelectorAll('.nav-group-toggle').forEach(function(btn) {
 });
 </script>
 
+=======
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
 </body>
 </html>

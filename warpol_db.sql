@@ -3,9 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: May 08, 2026 at 04:37 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
+=======
+-- Generation Time: May 02, 2026 at 06:08 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -82,6 +88,7 @@ INSERT INTO `stok_opname` (`id`, `barang_id`, `user_id`, `stok_sistem`, `stok_fi
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Table structure for table `orders`
 --
 
@@ -98,6 +105,8 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
+=======
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
 -- Table structure for table `users`
 --
 
@@ -115,10 +124,16 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nama`, `username`, `password`, `role`, `created_at`) VALUES
+<<<<<<< HEAD
 (1, 'Administrator', 'admin', '$2y$10$LCYh2jinaPaqQkhs/fg4A.MQ6OSvG/H.bwBjlSqNKEP41yvYBbdEG', 'admin', '2026-04-30 04:02:01'),
 (2, 'Fiqri Petugas', 'fiqri', '$2y$10$nbv5Lu4IVmZSXy.eMt/n7e7N8XLdPxKADC9Ok29X45E9OdaIWNCYW', 'petugas', '2026-04-30 04:02:01'),
 (3, 'Budi Petugas', 'budi', '$2y$10$U0rkaZBiAkg/WIfkoVB.RebNiaYecUcP3lZoVfbtTYX8CyR08KA5u', 'petugas', '2026-04-30 04:02:01'),
 (4, 'asep', 'asef', 'petugas123', 'petugas', '2026-05-08 10:21:40');
+=======
+(1, 'Administrator', 'admin', '$2y$10$L9T9DZnuH65xlrqstq.fsuoRyrg4whOZbh.5dER8yoWWd1SjKmwG2', 'admin', '2026-04-30 04:02:01'),
+(2, 'Fiqri Petugas', 'fiqri', '$2y$10$wxlM/go7sSfVSFRwi6TH9eq.88744FdewibPNBkS.i1PevJMN.Eka', 'petugas', '2026-04-30 04:02:01'),
+(3, 'Budi Petugas', 'budi', '$2y$10$Xmh6p44eZ8rbK5vEIT3JquuoH7WJqBkvOkM/Kmayk3WYLt1oXzo2a', 'petugas', '2026-04-30 04:02:01');
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
 
 --
 -- Indexes for dumped tables
@@ -139,6 +154,7 @@ ALTER TABLE `stok_opname`
   ADD KEY `user_id` (`user_id`);
 
 --
+<<<<<<< HEAD
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
@@ -147,6 +163,8 @@ ALTER TABLE `orders`
   ADD KEY `user_id` (`user_id`);
 
 --
+=======
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -173,6 +191,7 @@ ALTER TABLE `stok_opname`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
@@ -180,6 +199,9 @@ ALTER TABLE `users`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
 
 --
 -- Constraints for dumped tables
@@ -191,6 +213,7 @@ ALTER TABLE `orders`
 ALTER TABLE `stok_opname`
   ADD CONSTRAINT `stok_opname_ibfk_1` FOREIGN KEY (`barang_id`) REFERENCES `barang` (`id`),
   ADD CONSTRAINT `stok_opname_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+<<<<<<< HEAD
 
 --
 -- Constraints for table `orders`
@@ -198,6 +221,8 @@ ALTER TABLE `stok_opname`
 ALTER TABLE `orders`
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`barang_id`) REFERENCES `barang` (`id`),
   ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+=======
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

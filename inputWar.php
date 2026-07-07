@@ -16,9 +16,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = mysqli_prepare($conn, "INSERT INTO stok_opname (barang_id, user_id, stok_sistem, stok_fisik, keterangan, status) VALUES (?, ?, ?, ?, ?, 'selesai')");
         mysqli_stmt_bind_param($stmt, 'iiiss', $barang_id, $user_id, $stok_sistem, $stok_fisik, $keterangan);
         if (mysqli_stmt_execute($stmt)) {
+<<<<<<< HEAD
             $stmt_upd = mysqli_prepare($conn, "UPDATE barang SET stok_sistem = ? WHERE id = ?");
             mysqli_stmt_bind_param($stmt_upd, 'ii', $stok_fisik, $barang_id);
             mysqli_stmt_execute($stmt_upd);
+=======
+            mysqli_query($conn, "UPDATE barang SET stok_sistem = $stok_fisik WHERE id = $barang_id");
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
             $success = 'Data stok opname berhasil disimpan!';
         } else { $error = 'Gagal menyimpan data.'; }
     } else { $error = 'Harap isi semua field dengan benar.'; }
@@ -29,7 +33,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Input Stok Opname - KALA Coffee</title>
+=======
+    <title>Input Stok Opname - Warpol</title>
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
     <link rel="stylesheet" href="styles.css">
     <style>
         .img-logo-sidebar { width:42px;height:42px;object-fit:cover;border-radius:50%;border:2px solid rgba(255,255,255,0.5);flex-shrink:0; }
@@ -43,14 +51,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <aside class="sidebar">
         <div class="sidebar-header">
             <div class="sidebar-logo">
+<<<<<<< HEAD
                 <img src="poto/logo.png" alt="Logo" class="img-logo-sidebar">
                 <div class="logo-text"><h2>KALA Coffee</h2><p>Coffee Shop</p></div>
+=======
+                <img src="logo.png" alt="Logo" class="img-logo-sidebar">
+                <div class="logo-text"><h2>Warpol</h2><p>Coffee Shop</p></div>
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
             </div>
         </div>
         <nav class="sidebar-nav">
             <a href="dashWar.php" class="nav-item">
                 <span>Dashboard</span>
             </a>
+<<<<<<< HEAD
 
             <div class="nav-group open" id="group-stok-opname">
                 <button type="button" class="nav-group-toggle" data-target="stokOpnameMenu" aria-expanded="true">
@@ -110,6 +124,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </button>
                 <a href="logout.php" class="logout-btn">
                     <img src="poto/keluar.jpg" alt="Keluar" class="img-header">
+=======
+            <a href="inputWar.php" class="nav-item active">
+                <img src="input.png" alt="" class="img-nav">
+                <span>Input Stok Opname</span>
+            </a>
+            <a href="riwayatWar.php" class="nav-item">
+                <img src="riwayat.png" alt="" class="img-nav">
+                <span>Riwayat Stok</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-content">
+        <header class="header">
+            <div class="header-left">
+                <h1>Selamat datang, <?= htmlspecialchars($_SESSION['user_nama']) ?></h1>
+                <p>Petugas - Warpol</p>
+            </div>
+            <div class="header-right">
+                <button class="notification-btn">
+                    <img src="notif.png" alt="Notifikasi" class="img-header">
+                    <span class="notification-badge"></span>
+                </button>
+                <a href="logout.php" class="logout-btn">
+                    <img src="keluar.jpg" alt="Keluar" class="img-header">
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
                     <span>Keluar</span>
                 </a>
             </div>
@@ -118,7 +158,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <main class="page-content">
             <div class="page-header">
                 <h1>Input Stok Opname</h1>
+<<<<<<< HEAD
                 <p>Masukkan data stok opname barang coffee shop KALA Coffe</p>
+=======
+                <p>Masukkan data stok opname barang coffee shop</p>
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
             </div>
 
             <div class="grid-layout">
@@ -147,9 +191,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="grid-2">
                             <div class="form-group">
                                 <label>Stok Sistem</label>
+<<<<<<< HEAD
                                 <input type="number" id="stok_sistem" name="stok_sistem" placeholder="0" required min="0" readonly
                                        style="background-color:#e9ecef;cursor:not-allowed;color:#6b7280;" onchange="hitungSelisih()">
                                 <p class="help-text" style="color:#dc2626;">🔒 Hanya bisa diubah oleh Admin</p>
+=======
+                                <input type="number" id="stok_sistem" name="stok_sistem" placeholder="0" required min="0" onchange="hitungSelisih()">
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
                                 <p class="help-text">Otomatis terisi saat pilih barang</p>
                             </div>
                             <div class="form-group">
@@ -165,7 +213,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                         <div class="btn-group">
                             <button type="submit" class="btn-primary">
+<<<<<<< HEAD
                                 <img src="poto/simpan.png" alt="" class="img-btn">
+=======
+                                <img src="simpan.png" alt="" class="img-btn">
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
                                 <span>Simpan Data</span>
                             </button>
                             <button type="button" class="btn-secondary" onclick="resetForm()">Reset</button>
@@ -215,6 +267,7 @@ function resetForm() {
     document.getElementById('formStok').reset();
     document.getElementById('selisihBox').style.display = 'none';
 }
+<<<<<<< HEAD
 
 document.getElementById('hamburger-btn').addEventListener('click', function() {
     document.querySelector('.sidebar').classList.toggle('open');
@@ -243,6 +296,8 @@ document.querySelectorAll('.nav-group-toggle').forEach(function(btn) {
         btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 });
+=======
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
 </script>
 </body>
 </html>

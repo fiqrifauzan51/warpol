@@ -26,7 +26,11 @@ $ring = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total, SUM(se
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Riwayat Stok - KALA Coffe</title>
+=======
+    <title>Riwayat Stok - Warpol</title>
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -34,14 +38,20 @@ $ring = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total, SUM(se
     <aside class="sidebar">
         <div class="sidebar-header">
             <div class="sidebar-logo">
+<<<<<<< HEAD
                 <img src="poto/logo.png" alt="Logo" class="logo-img">
                 <div class="logo-text"><h2>KALA Coffe</h2><p>Coffee Shop</p></div>
+=======
+                <img src="logo.png" alt="Logo" class="logo-img">
+                <div class="logo-text"><h2>Warpol</h2><p>Coffee Shop</p></div>
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
             </div>
         </div>
         <nav class="sidebar-nav">
             <a href="dashWar.php" class="nav-item">
                 <span>Dashboard</span>
             </a>
+<<<<<<< HEAD
 
             <div class="nav-group open" id="group-stok-opname">
                 <button type="button" class="nav-group-toggle" data-target="stokOpnameMenu" aria-expanded="true">
@@ -101,6 +111,32 @@ $ring = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total, SUM(se
                 </button>
                 <a href="logout.php" class="logout-btn">
                     <img src="poto/keluar.jpg" alt="Keluar" class="header-img-icon">
+=======
+            <a href="inputWar.php" class="nav-item">
+                <img src="input.png" alt="" class="nav-img-icon">
+                <span>Input Stok Opname</span>
+            </a>
+            <a href="riwayatWar.php" class="nav-item active">
+                <img src="riwayat.png" alt="" class="nav-img-icon">
+                <span>Riwayat Stok</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-content">
+        <header class="header">
+            <div class="header-left">
+                <h1>Selamat datang, <?= htmlspecialchars($_SESSION['user_nama']) ?></h1>
+                <p>Petugas - Warpol</p>
+            </div>
+            <div class="header-right">
+                <button class="notification-btn">
+                    <img src="notif.png" alt="Notifikasi" class="header-img-icon">
+                    <span class="notification-badge"></span>
+                </button>
+                <a href="logout.php" class="logout-btn">
+                    <img src="keluar.jpg" alt="Keluar" class="header-img-icon">
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
                     <span>Keluar</span>
                 </a>
             </div>
@@ -109,7 +145,11 @@ $ring = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total, SUM(se
         <main class="page-content">
             <div class="page-header">
                 <h1>Riwayat Stok Opname</h1>
+<<<<<<< HEAD
                 <p>Lihat dan kelola riwayat stok opname barang coffee shop KALA Coffe</p>
+=======
+                <p>Lihat dan kelola riwayat stok opname barang</p>
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
             </div>
 
             <div class="summary-grid">
@@ -136,7 +176,11 @@ $ring = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total, SUM(se
                                 </select>
                             </div>
                             <button type="submit" class="btn-export">
+<<<<<<< HEAD
                                 <img src="poto/cari.png" alt="" class="btn-img-icon"> Cari
+=======
+                                <img src="cari.png" alt="" class="btn-img-icon"> Cari
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
                             </button>
                         </div>
                     </form>
@@ -182,6 +226,7 @@ $ring = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total, SUM(se
         </main>
     </div>
 </div>
+<<<<<<< HEAD
 
 <script>
 document.getElementById('hamburger-btn').addEventListener('click', function() {
@@ -213,5 +258,7 @@ document.querySelectorAll('.nav-group-toggle').forEach(function(btn) {
 });
 </script>
 
+=======
+>>>>>>> 2eca77405b0fc96d6d66db72dbe7cbecffa3b0d3
 </body>
 </html>
