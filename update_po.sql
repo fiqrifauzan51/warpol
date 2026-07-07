@@ -1,0 +1,9 @@
+-- Tambah kolom baru ke tabel orders untuk fitur PO
+ALTER TABLE orders
+    ADD COLUMN IF NOT EXISTS no_po VARCHAR(30) DEFAULT NULL AFTER id,
+    ADD COLUMN IF NOT EXISTS pengirim VARCHAR(100) DEFAULT NULL AFTER notes,
+    ADD COLUMN IF NOT EXISTS penerima VARCHAR(100) DEFAULT NULL AFTER pengirim,
+    ADD COLUMN IF NOT EXISTS ttd_pengirim TEXT DEFAULT NULL AFTER penerima,
+    ADD COLUMN IF NOT EXISTS ttd_penerima TEXT DEFAULT NULL AFTER ttd_pengirim,
+    ADD COLUMN IF NOT EXISTS approved_at TIMESTAMP NULL DEFAULT NULL AFTER ttd_penerima,
+    ADD COLUMN IF NOT EXISTS approved_by INT(11) DEFAULT NULL AFTER approved_at;
